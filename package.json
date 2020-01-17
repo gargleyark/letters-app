@@ -1,10 +1,9 @@
 {
-  "name": "react-material-dashboard",
-  "author": "DeviasIO",
-  "email": "contact@devias.io",
+  "name": "letters app",
+  "author": "steelo",
   "licence": "MIT",
   "version": "0.3.0",
-  "private": false,
+  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
