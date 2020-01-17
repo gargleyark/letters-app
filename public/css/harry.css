@@ -1,0 +1,14 @@
+@font-face {
+  font-family: handwriting;
+  src: url(handwriting.ttf);
+}
+
+@font-face {
+  font-family: telegram;
+  src: url(telegram.ttf);
+}
+
+@font-face {
+  font-family: postcard;
+  src: url(postcard.ttf);
+}
