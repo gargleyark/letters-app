@@ -26,8 +26,16 @@ const Topbar = props => {
   const classes = useStyles();
 
   const [notifications] = useState([]);
-
+  
   return (
+    <Hidden lgUp>
+      <IconButton
+        color="inherit"
+        onClick={onSidebarOpen}
+        >
+        <MenuIcon />
+      </IconButton>
+    </Hidden>
     // <AppBar
     //   {...rest}
     //   className={clsx(classes.root, className)}
@@ -57,17 +65,9 @@ const Topbar = props => {
     //         <InputIcon />
     //       </IconButton>
     //     </Hidden>
-    //     <Hidden lgUp>
-    //       <IconButton
-    //         color="inherit"
-    //         onClick={onSidebarOpen}
-    //       >
-    //         <MenuIcon />
-    //       </IconButton>
-    //     </Hidden>
+    //     
     //   </Toolbar>
     // </AppBar>
-    ''
   );
 };
 

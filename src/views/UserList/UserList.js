@@ -29,7 +29,7 @@ const UserList = () => {
 
   return (
     <div className={classes.root}>
-      <UsersToolbar filter={filter}/>
+      <UsersToolbar filter={filter} data={letters} />
       <div className={classes.content}>
         <UsersTable users={filteredData} />
       </div>

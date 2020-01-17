@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const UsersToolbar = props => {
-  const { className, filter, ...rest } = props;
+  const { className, filter, data, ...rest } = props;
 
   const classes = useStyles();
 
@@ -40,7 +40,7 @@ const UsersToolbar = props => {
     >
       <div className={classes.row}>
         <span className={classes.spacer} />
-        <Button className={classes.exportButton} onClick={() => alert('nope')}>Export</Button>
+        <Button className={classes.exportButton} onClick={() => document.body.innerHTML = JSON.stringify(data)}>Export</Button>
       </div>
       <div className={classes.row}>
         <SearchInput
