@@ -4,7 +4,7 @@
   "licence": "MIT",
   "version": "0.3.0",
   "private": true,
-  "homepage": "http://gargleyark.github.io/letters-app",
+  "homepage": "https://serene-archimedes-5d9299.netlify.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
