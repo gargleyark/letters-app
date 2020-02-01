@@ -4,6 +4,7 @@ import { Grid } from '@material-ui/core';
 import { NavLink as RouterLink } from 'react-router-dom';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import ArrowForward from '@material-ui/icons/ArrowForward';
+import Print from '@material-ui/icons/Print';
 import IconButton from '@material-ui/core/IconButton';
 import { letters } from '../../data'
 
@@ -27,7 +28,11 @@ const useStyles = makeStyles(theme => ({
   },
   next: {
     textAlign: 'right',
-    order: 1
+    order: 2
+  },
+  print: {
+    order: 1,
+    textAlign: 'center',
   },
   envelope: {
     order: 2,
@@ -55,6 +60,8 @@ const Dashboard = ({
 }) => {
   const classes = useStyles();
   const letter = letters[id]
+  const nextId = parseInt(id) + 1
+  const prevId = parseInt(id) - 1
 
   return (
     <div className={classes.root}>
@@ -64,31 +71,45 @@ const Dashboard = ({
       >
         <Grid
           item
-          lg={6}
-          md={6}
-          xl={6}
-          xs={6}
+          lg={5}
+          md={5}
+          xl={5}
+          xs={5}
           className={classes.back}
         >
-          <RouterLink to={`/letter/${parseInt(id) - 1}`}>
+          {letters[prevId] && <RouterLink to={`/letter/${prevId}`}>
             <IconButton>
               <ArrowBack />
+            </IconButton>
+          </RouterLink>}
+        </Grid>
+        <Grid
+          item
+          lg={2}
+          md={2}
+          xl={2}
+          xs={2}
+          className={classes.print}
+        >
+          <RouterLink to={`/letter/${id}/print`}>
+            <IconButton>
+              <Print />
             </IconButton>
           </RouterLink>
         </Grid>
         <Grid
           item
-          lg={6}
-          md={6}
-          xl={6}
-          xs={6}
+          lg={5}
+          md={5}
+          xl={5}
+          xs={5}
           className={classes.next}
         >
-          <RouterLink to={`/letter/${parseInt(id) + 1}`}>
+          {letters[nextId] && <RouterLink to={`/letter/${nextId}`}>
             <IconButton>
               <ArrowForward />
             </IconButton>
-          </RouterLink>
+          </RouterLink>}
         </Grid>
         <Grid
           item

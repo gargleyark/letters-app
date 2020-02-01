@@ -10,31 +10,30 @@ import {
   CardContent,
   CardActions,
   Divider,
-  Button,
-  Box
+  Button
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 import { data, options } from './chart';
-import { letterSpacing } from '@material-ui/system';
 
 const useStyles = makeStyles(theme => ({
-  root: {},
+  root: {
+    boxShadow: 'none',
+    width: '80%',
+    margin: 'auto'
+  },
   letterContainer: {
     position: 'relative',
     fontFamily: 'handwriting',
-    fontSize: '38px',
+    fontSize: '26px',
     letterSpacing: '-2px',
-    lineHeight: '28px',
+    lineHeight: '18px',
     color: '#555',
-    textIndent: '30px',
+    textIndent: '20px',
     '& > p': {
-      marginTop: '10px'
+      marginTop: '8px'
     }
-  },
-  letter: {
-    fontFamily: 'handwriting',
   },
   actions: {
     justifyContent: 'flex-end',
@@ -57,16 +56,16 @@ const useStyles = makeStyles(theme => ({
   },
   signature: {
     fontFamily: 'handwriting',
-    fontSize: '38px',
+    fontSize: '26px',
     letterSpacing: '-2px',
-    lineHeight: '28px',
+    lineHeight: '18px',
     color: '#555',
   },
   dated: {
     fontFamily: 'handwriting',
-    fontSize: '38px',
+    fontSize: '26px',
     letterSpacing: '-2px',
-    lineHeight: '28px',
+    lineHeight: '18px',
     color: '#555',
   },
   rightPadded: {
@@ -89,7 +88,7 @@ const useStyles = makeStyles(theme => ({
     '&::before': {
       content: '"----------"',
       position: 'absolute',
-      fontSize: '100px',
+      fontSize: '72px',
       fontWeight: 'bold',
       left: '0px',
       textAlign: 'left',
@@ -105,53 +104,22 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-// "postcard":{
-//          "status":"I am quite well",
-//          "letters":"I have received your letter dated July 1st",
-//          "next":"Letter follows at first opportunity",
-//          "signed":"B Shepherd"
-//       }
-//    },
-// "postcard":{
-//          "status":"I am quite well",
-//          "letters":"I have received your letter dated",
-//          "next":"Letter follows at first opportunity",
-//          "signed":"B Shepherd"
-//       }
-//    },
-// "postcard":{
-//          "status":"I am quite well",
-//          "letters":"I have received your letter ",
-//          "next":"Letter follows at first opportunity",
-//          "signed":"B Shepherd"
-//       }
-//    },
-// "postcard":{
-//          "status":"I am quite well",
-//          "letters":"I have received your letter(s)",
-//          "next":"I will send you a letter as soon as possible"
-//       }
-//    },
-//    {
-
 
 const LatestSales = props => {
-  const { className, letterData, showAddress, ...rest } = props;
+  const { className, letterData, ...rest } = props;
   const classes = useStyles();
-
+  
   if (!letterData) {
     return <Redirect to="/not-found" />
   }
-
+  
   const {
     date,
     letter,
     telegram,
     postcard,
-    message,
-    address
+    message
   } = letterData;
-
   
   const createCensoredText = () => {
     const scramble = ['I', 'now', 'what', 'how', 'Britain', 'here', 'tomorrow', 'yes', 'abe', 'General' ,'peace']
@@ -169,7 +137,7 @@ const LatestSales = props => {
       .replace(/\[censored\]/, createCensoredText())
       .replace(/\[blank\]/, `<span class="${classes.blank}"></span>`)
     }</p>`;
-
+    
   const getPostcard = ({ status, letters, dated, next, signed }) => (
     <div className={classes.postcard}>
       <p>NOTHING is to be written on this side except the date and signature of the sender. Sentences not required may be erased. <u>If anything else is added the post card will be destroyed.</u></p>
@@ -203,10 +171,6 @@ const LatestSales = props => {
       {...rest}
       className={clsx(classes.root, className)}
     >
-      <CardHeader
-        title={date}
-      />
-      <Divider />
       <CardContent>
         {
           postcard ? 
@@ -223,9 +187,7 @@ const LatestSales = props => {
 };
 
 LatestSales.propTypes = {
-  className: PropTypes.string,
-  showAddress: PropTypes.bool,
-  letter: PropTypes.object
+  className: PropTypes.string
 };
 
 export default LatestSales;

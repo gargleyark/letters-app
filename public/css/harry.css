@@ -12,3 +12,12 @@
   font-family: postcard;
   src: url(postcard.ttf);
 }
+
+@media print {
+  .pagebreak {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+    page-break-after: always;
+  }
+}
