@@ -102,6 +102,11 @@ const useStyles = makeStyles(theme => ({
   blank: {
     padding: '0px 50px',
     display: 'inline-block'
+  },
+  drawing: {
+    float: 'right',
+    maxHeight: 140,
+    maxWidth: 140
   }
 }));
 
@@ -168,6 +173,7 @@ const LatestSales = props => {
       .replace(/(\.|,)/g, punc => `<span class="${classes.commaSpacing}">${punc}</span>`)
       .replace(/\[censored\]/, createCensoredText())
       .replace(/\[blank\]/, `<span class="${classes.blank}"></span>`)
+      .replace(/\[drawing\]/, `<img class="${classes.drawing}" src="/images/letters/${date.replace(/\//g, '-')}.png"/>`)
     }</p>`;
 
   const getPostcard = ({ status, letters, dated, next, signed }) => (
