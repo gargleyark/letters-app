@@ -144,20 +144,28 @@ const UsersByDevice = props => {
       className={clsx(classes.root, className)}
     >
       <CardContent>
-        <div className={`${classes.chartContainer} ${telegram ? classes.telegram : ''}`}>
-          To { addressArray[0] }
-          <div style={{ fontSize: 14, letterSpacing: 1 }}>
-            { latterAddress.join(', ') }
-          </div>
+        <div style={{ fontSize: 26, letterSpacing: 1, marginBottom: 10, marginTop: 40 }}>
+          The Letters of
         </div>
+        <div className={`${classes.chartContainer}`}>
+          Pte. Bernard Charles Shepherd
+        </div>
+        <div style={{ fontSize: 14, letterSpacing: 1, width: 414, margin: 'auto', lineHeight: 1.2, marginTop: 20 }}>
+          Written during his millitary engagements in Britain, France, Holland, and Germany in the Second World War.
+        </div>
+        <div style={{ fontSize: 20, letterSpacing: 1, marginTop: 30 }}>
+          Book 1
         <div style={{ fontSize: 14, letterSpacing: 1 }}>
-          { date }
+          June 1942 - December 1945
         </div>
-        {onActiveService ? (
-          <div style={{ fontSize: 14, letterSpacing: 1, color: '#844' }}>
-            On Active Service
-          </div>
-        ) : ''}
+        <img style={{width: 300, borderRadius: '50%', marginTop: 20, border: '2px solid black'}} src="/images/main.png" />
+        </div>
+        <div style={{ fontSize: 14, letterSpacing: 1, lineHeight: 1.2, width: 410,margin: 'auto', marginTop: 30 }}>
+          This verbatim transcription of his original letters was completed in February 2020 by M. Steel, his grandson, the font having been reproduced from the letters themselves.
+        </div>
+        <div style={{ fontSize: 10, letterSpacing: 1, lineHeight: 1.2, width: 200,margin: 'auto', marginTop: 30, marginBottom: 200 }}>
+          Printed for Private Circulation, bound at the Sign of the Winged Horse
+        </div>
       </CardContent>
     </Card>
   );

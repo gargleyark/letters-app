@@ -75,7 +75,7 @@ const ViewAll = ({
             }}
             >
             <UsersByDevice {...letter}/>
-            <LatestSales letterData={letter}/>
+            {/* <LatestSales letterData={letter}/> */}
           </Grid>
           || <Redirect to="/not-found" />
         // ))
