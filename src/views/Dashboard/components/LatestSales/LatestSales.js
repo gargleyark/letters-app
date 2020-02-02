@@ -49,6 +49,11 @@ const useStyles = makeStyles(theme => ({
       marginTop: 10,
     }
   },
+  squareBracketsContent: {
+    fontFamily: 'postcard',
+    fontSize: 20,
+    letterSpacing: 0
+  },
   padded: {
     paddingLeft: 20,
   }, 
@@ -174,6 +179,7 @@ const LatestSales = props => {
       .replace(/\[censored\]/g, createCensoredText())
       .replace(/\[blank\]/g, `<span class="${classes.blank}"></span>`)
       .replace(/\[drawing\]/g, `<img class="${classes.drawing}" src="/images/letters/${date.replace(/\//g, '-')}.png"/>`)
+      .replace(/\[.+?\]/g, text => `<span class="${classes.squareBracketsContent}">${text}</span>`)
     }</p>`;
 
   const getPostcard = ({ status, letters, dated, next, signed }) => (
