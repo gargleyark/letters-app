@@ -133,7 +133,10 @@ const UsersByDevice = props => {
   const addressArray = address.split(',');
   const [, ...latterAddress] = addressArray;
 
-  useEffect(() => document.body.style.backgroundColor = '#fff', [])
+  useEffect(() => {
+    document.body.style.backgroundColor = '#fff';
+    document.title = `${date.match(/\d+/g)[1]}-${date.match(/\d+/g)[0]}`
+  }, [])
 
   return (
     <Card
