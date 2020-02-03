@@ -151,7 +151,7 @@ const UsersByDevice = props => {
           Pte. Bernard Charles Shepherd
         </div>
         <div style={{ fontSize: 14, letterSpacing: 1, width: 414, margin: 'auto', lineHeight: 1.2, marginTop: 20 }}>
-          Written during his millitary engagements in Britain, France, Holland, and Germany in the Second World War.
+          Written during his military engagements in Britain, France, Holland, and Germany in the Second World War.
         </div>
         <div style={{ fontSize: 20, letterSpacing: 1, marginTop: 30 }}>
           Book 1
